@@ -1,6 +1,6 @@
 import axios from "axios";
-
-require("dotenv").config();
+import 'dotenv/config'
+// require("dotenv").config();
 
 axios.defaults.baseURL = "https://api.unsplash.com/";
 
