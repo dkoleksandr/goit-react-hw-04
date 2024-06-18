@@ -6,6 +6,7 @@ import ImageGallery from "./components/ImageGallery/ImageGallery";
 import ImageModal from "./components/ImageModal/ImageModal";
 import Loader from "./components/Loader/Loader";
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
+import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 
 const App = () => {
   const [photos, setPhotos] = useState([]);
@@ -50,11 +51,7 @@ const App = () => {
   return (
     <>
       <SearchBar onSubmit={handleSearch}></SearchBar>
-      {error && (
-        <p>
-          <b>Oops....some error! pls reload</b>
-        </p>
-      )}
+      {error && <ErrorMessage/>}
       {photos.length > 0 && (
         <ImageGallery photos={photos} onClick={openModal} />
       )}
