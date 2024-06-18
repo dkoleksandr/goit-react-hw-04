@@ -5,6 +5,7 @@ import SearchBar from "./components/SearchBar/SearchBar";
 import ImageGallery from "./components/ImageGallery/ImageGallery";
 import ImageModal from "./components/ImageModal/ImageModal";
 import Loader from "./components/Loader/Loader";
+import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
 
 const App = () => {
   const [photos, setPhotos] = useState([]);
@@ -58,7 +59,7 @@ const App = () => {
         <ImageGallery photos={photos} onClick={openModal} />
       )}
       {isLoading && <Loader />}
-      {photos.length > 0 && <button onClick={handleLoadMore}>Load more</button>}
+      {photos.length > 0 && <LoadMoreBtn handleLoadMore={handleLoadMore}/>}
 
       <ImageModal
         isOpen={Boolean(selectedPhoto)}
